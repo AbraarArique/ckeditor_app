@@ -1,0 +1,41 @@
+<% content_for :title do %>
+  <title> Home | CKEditor App</title>
+<% end %>
+
+<%= render 'header' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 class="text-center">CKEditor Ruby on Rails Application</h1>
+      <div class="table-responsive">
+        <table class="table table-stripped table-bordered table-hover">
+          <tr>
+            <th>Post ID</th>
+            <th>Title</th>
+            <th>Actions</th>
+          </tr>
+          <% if @blog_posts.any? %>
+            <% @blog_posts.each do |blog_post| %>
+              <tr>
+                <td><%= blog_post.id %></td>
+                <td><%= link_to blog_post.title.html_safe, blog_post_path(blog_post) %></td>
+                <td>
+                  <%= link_to 'Edit', edit_blog_post_path(blog_post), class: 'btn btn-primary' %>
+                  <%= link_to 'Delete', blog_post_path(blog_post), method: :delete, class: 'btn btn-danger' %>
+                </td>
+              </tr>
+            <% end %>
+          <% else %>
+            <tr>
+              <td colspan="4" class="text-center">
+                <p class="text-muted"><b>You don't have any blog posts yet.</b></p>
+                <%= link_to 'Create a New Blog Post', new_blog_post_path, class: 'btn btn-primary btn-lg' %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

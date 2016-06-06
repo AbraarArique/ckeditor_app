@@ -1,0 +1,46 @@
+<% content_for :title do %>
+  <title> Blog Post | CKEditor App</title>
+<% end %>
+
+<%= render 'header' %>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <p class="navbar-brand">Showing Blog Post</p>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <p class="navbar-btn"><%= link_to 'Back', :back, class: 'btn btn-default' %>&nbsp;&nbsp;</p>
+        </li>
+        <li>
+          <p class="navbar-btn"><%= link_to 'Edit', edit_blog_post_path(@blog_post), class: 'btn btn-primary' %>&nbsp;&nbsp;</p>
+        </li>
+        <li>
+          <p class="navbar-btn"><%= link_to 'Delete', blog_post_path(@blog_post), method: :delete, class: 'btn btn-danger' %></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Title:</h3>
+      <h1><%= @blog_post.title %></h1>
+      <hr>
+      <h3>Content:</h3>
+      <div>
+        <%= @blog_post.content.html_safe %>
+      </div>
+    </div>
+  </div>
+</div>

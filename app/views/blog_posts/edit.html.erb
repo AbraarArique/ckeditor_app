@@ -1,0 +1,18 @@
+<% content_for :title do %>
+  <title>Edit Blog Post</title>
+<% end %>
+
+<%= render 'header' %>
+
+<div class="container">
+  <% if @blog_post.errors.any? %>
+    <%= render 'validation' %>
+  <% end %>
+  <div class="row mid-full">
+    <div class="col-xs-12">
+      <h1>Edit Blog Post</h1>
+      <hr><br>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
