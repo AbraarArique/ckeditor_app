@@ -2,7 +2,7 @@
 
 ## Introduction
 
-CKEditor App is a simple and straightforward Ruby on Rails web application for blogging. It has CKEditor integrated which makes it easy to create rich-style formatting content for blog posts.
+CKEditor App is a simple and straightforward Ruby on Rails web application for blogging. It has CKEditor integrated which makes it easy to create rich-style formatting content for blog posts. It uses the CKEditor gem for Rails.
 
 This app is built using:
 
